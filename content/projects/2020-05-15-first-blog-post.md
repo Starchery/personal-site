@@ -1,5 +1,5 @@
 +++
-title = "My first Zola blog post"
+title = "Random project"
 [taxonomies]
 tags = [ "beginner" ]
 +++
@@ -51,8 +51,6 @@ hiatu. _Sontes est_ sicut protinus anus.
 Qua nec quaecumque audet nescitve nacta indiciique servat. Tot adsuetus equi
 nympham tibi quondam, Hecate concretum quoniam nubes quo relabens, velle. Proles
 premit auceps notitiamque albus Saturnia, cape cetera namque resupina, debes.
-
----
 
 [^1]: This is a footnote. You can elaborate on things you've said or just go on a rant.
 

@@ -3,10 +3,11 @@ base_url = "https://example.com"
 
 theme = "simple-dev-blog"
 
+title = "randy::site"
+
 taxonomies = [
     { name = "tags" }
 ]
-
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -21,3 +22,27 @@ build_search_index = false
 
 [extra]
 # Put all your custom variables here
+nav = [
+  { name = "Blog", path = "/blog/" },
+  { name = "Projects", path = "/projects/" },
+  { name = "About", path = "/about/" },
+]
+
+latest_text = "Latest post: "
+
+icon = "icon.jpg"
+profile_small = "icon.jpg"
+profile_large = "profile.jpg"
+
+accent = "#0366D6"
+accent_light = "#0366D6"
+
+author = "John Doe"
+
+footer_about = """
+A simple dev-blog theme created by Bennett. You can follow him on [Github](https://github.com/bennetthardwick) (if you like).
+"""
+
+not_found_message = """
+This is not the page you're looking for... return back to [safety?](/)
+"""
