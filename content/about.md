@@ -17,12 +17,16 @@ You can find installation instructions [on the Zola website](https://www.getzola
 
 1. After you've installed the Zola CLI, run the following command to create a new site:
 
+   <div class="language-tag">Shell session</div>
+
    ```sh
    zola init my_amazing_site
    cd my_amazing_site
    ```
 
 2. After you've created the site, install the "Simple Dev Blog" theme like so:
+
+   <div class="language-tag">Shell session</div>
 
    ```sh
    git clone --depth=1 \
@@ -33,6 +37,8 @@ You can find installation instructions [on the Zola website](https://www.getzola
 3. Now in your `config.toml` file, choose the theme by setting `theme = "simple-dev-blog"`.
 
 4. That's it! Now build your site by running the following command, and navigate to `127.0.0.1:111`:
+
+   <div class="language-tag">Shell session</div>
 
    ```sh
    zola serve
