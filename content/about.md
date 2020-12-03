@@ -15,7 +15,7 @@ I’m most familiar with
 [python](https://python.org),
 but I’ve been spending time learning
 [rust](https://rust-lang.org)
-and [typescript](https://typescriptlang.org)
+and [typescript](https://www.typescriptlang.org/)
 also.
 
 I like
