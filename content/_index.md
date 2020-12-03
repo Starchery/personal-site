@@ -20,12 +20,12 @@ but I might occasionally talk about music, among other things.
     if you encounter any weirdness.
 </div>
 
-Links are set in [small caps](google.com).
+Links are set in [small caps](/).
 Unlike [practical typography](https://0x0.st/Njj5),
 both cross-references and external links are set this way.
 
 The faux nav bar on the left is an exception:
 
 1. everything in the nav bar is a link
-2. `randy::site` is a link to the home page
+2. `ydnar.dev` is a link to the home page
 (the one you’re on now)

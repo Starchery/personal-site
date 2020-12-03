@@ -1,7 +1,7 @@
 +++
 title = "Hello, World!"
 [taxonomies]
-tags = []
+tags = ["life"]
 +++
 
 This is the first post on my new site.

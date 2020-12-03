@@ -3,7 +3,7 @@ base_url = "https://ydnar.dev"
 
 theme = "simple-dev-blog"
 
-title = "randy::site"
+title = "ydnar.dev"
 
 taxonomies = [
     { name = "tags" }
@@ -25,6 +25,7 @@ build_search_index = false
 nav = [
   { name = "Blog", path = "/blog/" },
   { name = "Projects", path = "/projects/" },
+  { name = "Tags", path = "/tags/"},
   { name = "About", path = "/about/" },
 ]
 
@@ -39,7 +40,7 @@ accent_light = "#0366D6"
 
 author = "Randy Henry"
 
-footer_about = """"""
+footer_about = """ """
 
 not_found_message = """
 There’s no page here. [go home?](/)
