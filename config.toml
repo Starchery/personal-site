@@ -37,12 +37,10 @@ profile_large = "profile.jpg"
 accent = "#0366D6"
 accent_light = "#0366D6"
 
-author = "John Doe"
+author = "Randy Henry"
 
-footer_about = """
-A simple dev-blog theme created by Bennett. You can follow him on [Github](https://github.com/bennetthardwick) (if you like).
-"""
+footer_about = """"""
 
 not_found_message = """
-This is not the page you're looking for... return back to [safety?](/)
+There’s no page here. [go home?](/)
 """

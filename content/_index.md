@@ -1,13 +1,31 @@
 +++
-title = "Bennett's Rust Journal"
+title = "randy's ramblings"
 +++
 
-## Hello, this is a simple dev blog.
+# hi.
 
-This is a simple dev blog that I made [for my website](https://bennetthardwick.com).
-It's quite easy to install, just go to the [project page](https://github.com/bennetthardwick/simple-dev-blog-zola-starter) and follow the prompts.
+This is a simple blog based on
+[practical typography](https://0x0.st/Njj5)
+by Matthew Butterick.
+I intend to use it to talk about programming,
+but I might occasionally talk about music, among other things.
 
-<!-- This template does some fancy stuff like [pre-rendering](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) blog posts and nav links,
-pre-fetching your profile image and adding a bunch of common meta tags.
 
-If you're still making up your mind, feel fee to take a look around by clicking the [about](/about/) and [blog](/blog/) nav links. -->
+## how to use this site
+
+<div class="aside">
+    This site is a work-in-progress.
+    Please
+    <a href="mailto:randolph.henry.work@gmail.com">let me know</a>
+    if you encounter any weirdness.
+</div>
+
+Links are set in [small caps](google.com).
+Unlike [practical typography](https://0x0.st/Njj5),
+both cross-references and external links are set this way.
+
+The faux nav bar on the left is an exception:
+
+1. everything in the nav bar is a link
+2. `randy::site` is a link to the home page
+(the one you’re on now)
