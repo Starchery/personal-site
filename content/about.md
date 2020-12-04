@@ -30,5 +30,3 @@ and chess&mdash;though I’m pretty bad at it.
 
 * [randolph.henry.work@gmail.com](mailto:randolph.henry.work@gmail.com)
 * [github.com/Starchery](github.com/Starchery)
-
-more links soon to come.

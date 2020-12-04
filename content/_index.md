@@ -2,7 +2,7 @@
 title = "randy's ramblings"
 +++
 
-# hi.
+# hi, i’m randy.
 
 This is a simple blog based on
 [practical typography](https://0x0.st/Njj5)
@@ -24,7 +24,7 @@ Links are set in [small caps](/).
 Unlike [practical typography](https://0x0.st/Njj5),
 both cross-references and external links are set this way.
 
-The faux nav bar on the left is an exception:
+The faux nav bar is an exception:
 
 1. everything in the nav bar is a link
 2. `ydnar.dev` is a link to the home page
