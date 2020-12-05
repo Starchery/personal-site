@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+
+    {{ block "description" . }} {{ end }}
+
+    {{ $title := print .Title " | " .Site.Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <meta name="twitter:title" content="{{ $title }}">
+    <title>{{ $title }}</title>
+
+    {{ block "head" . }}{{ end }}
+    {{ block "styles" . }}
+      {{ $css := resources.Get "sass/main.scss" | absURL }}
+      <link rel="stylesheet" href="{{ $css }}">
+    {{ end }}
+    {{ block "posthead" . }}{{ end }}
+  </head>
+  <a name="top" style="position: absolute;top:0"></a>
+  <body>
+    {{ block "header" . }}
+        {{ partial "nav.html" . }}
+    {{ end }}
+    <main>
+      {{ block "content" . }} {{ end }}
+    </main>
+    {{ partial "script.html" . }}
+  </body>
+</html>

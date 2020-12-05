@@ -1,0 +1,31 @@
+{{ define "styles" }}
+  {{ $css := "sass/index.scss" | absURL }}
+  <link rel="stylesheet" href="{{ $css }}">
+{{ end }}
+
+{{ define "posthead" }} {{ end }}
+
+
+{{ define "content" }}
+<div class="info">
+  <div class="profile">
+    <div class="profile-container">
+    </div>
+  </div>
+
+  <div class="content">
+    {{ .Content | safeHTML }}
+  </div>
+</div>
+
+<div class="posts-container">
+  <div id="left">
+    <h2>Recent posts</h2>
+  </div>
+
+  <div id="right">
+    <h2>Projects</h2>
+  </div>
+</div>
+
+{{ end }}

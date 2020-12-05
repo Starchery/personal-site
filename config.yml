@@ -1,0 +1,25 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: &title ydnar.dev
+
+menu:
+  main:
+    - name: *title
+      pre: home
+      url: /
+      weight: 1
+
+    - name: blogs
+      pre: edit
+      url: /blog/
+      weight: 2
+
+    - name: tags
+      pre: tag
+      url: /tags/
+      weight: 3
+
+    - name: about
+      pre: user
+      url: /about/
+      weight: 4
