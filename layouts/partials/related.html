@@ -1,10 +1,27 @@
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-    <h3>See Also</h3>
-    <ul>
-        {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-{{ end }}
+<div class="related-container">
+    <h3 class="related-container-header">See Also</h3>
+    <div class="related-container-link-container">
+        <div class="link">
+            {{ with .PrevInSection }}
+                <h3 class="link-header">Previous</h3>
+                <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+            {{ end }}
+        </div>
+
+        <div class="link">
+            {{ with .NextInSection }}
+                <h3 class="link-header">Next</h3>
+                <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+            {{ end }}
+        </div>
+    </div>
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
+        <ul>
+            {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    {{ end }}
+</div>
 

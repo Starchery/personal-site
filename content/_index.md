@@ -1,8 +1,6 @@
 ---
-title: randy's ramblings
+title: hi, i’m randy.
 ---
-
-# hi, i’m randy.
 
 This is a simple blog based on
 [practical typography](https://0x0.st/Njj5)

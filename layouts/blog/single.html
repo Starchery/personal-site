@@ -1,0 +1,15 @@
+{{ define "content" }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        {{ partial "util/date-and-tags.html" . }}
+        {{ if gt .WordCount 400 }}
+            <aside>
+                {{ .TableOfContents }}
+            </aside>
+        {{ end }}
+        {{ .Content | safeHTML }}
+        {{ partial "related.html" . }}
+        {{ partial "comments.html" . }}
+        {{ partial "util/back-to-top.html" . }}
+    </article>
+{{ end }}
