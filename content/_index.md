@@ -1,6 +1,6 @@
-+++
-title = "randy's ramblings"
-+++
+---
+title: randy's ramblings
+---
 
 # hi, i’m randy.
 

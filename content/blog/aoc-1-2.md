@@ -1,12 +1,14 @@
-+++
-title = "Advent of Code 2020 — Days 1–2"
-description = "Looking back over the start of AoC 2020. Comedy ensues."
-[taxonomies]
-tags = [ "programming", "advent of code" ]
-+++
+---
+title: Advent of Code 2020 — Days 1–2
+date: 2020-12-03
+summary: Looking back over the start of AoC 2020. Comedy ensues.
+tags:
+    - programming
+    - advent-of-code
+---
 
 It’s that time of year.
-[Advent of Code](adventofcode.com)
+[Advent of Code](https://adventofcode.com)
 is live and programmers everywhere are flexing their golfing skills on anyone bored enough to listen—and this year, I’m one of them.
 I’m new to this whole thing—I
 didn’t even know about AoC until 2019.
@@ -593,8 +595,6 @@ My goals for the rest of the event:
 And of course,
 
 * **Get all 50 stars**.
-
----
 
 [^1]: One interesting solution I saw was to sort the input initially.
     Work from the ends of the list inward.

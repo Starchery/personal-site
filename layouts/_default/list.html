@@ -1,8 +1,14 @@
 {{ define "content" }}
+
     <h1>{{ .Title }}</h1>
     {{ range .Pages.ByPublishDate.Reverse }}
-        <p>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </p>
+        {{ partial "post-preview.html" . }}
+        <div class="summary">
+          <p>
+              {{ .Summary | safeHTML }}
+              <a href="{{ .RelPermalink }}">read more</a>
+          </p>
+        </div>
     {{ end }}
+
 {{ end }}

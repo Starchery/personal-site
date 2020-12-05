@@ -1,31 +1,29 @@
-{{ define "styles" }}
-  {{ $css := "sass/index.scss" | absURL }}
-  <link rel="stylesheet" href="{{ $css }}">
-{{ end }}
-
-{{ define "posthead" }} {{ end }}
-
-
 {{ define "content" }}
-<div class="info">
-  <div class="profile">
-    <div class="profile-container">
+
+  <div class="info">
+    <div class="profile">
+      <div class="profile-container">
+      </div>
+    </div>
+
+    <div class="content">
+      {{ .Content | safeHTML }}
     </div>
   </div>
 
-  <div class="content">
-    {{ .Content | safeHTML }}
-  </div>
-</div>
+  <div class="posts-container">
+    <div id="left">
+      <h2>Recent posts</h2>
+      {{ with .Site.GetPage "section" "blog" }}
+        {{ range first 5 .Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      {{ end }}
+    </div>
 
-<div class="posts-container">
-  <div id="left">
-    <h2>Recent posts</h2>
+    <div id="right">
+      <h2>Projects</h2>
+    </div>
   </div>
-
-  <div id="right">
-    <h2>Projects</h2>
-  </div>
-</div>
 
 {{ end }}

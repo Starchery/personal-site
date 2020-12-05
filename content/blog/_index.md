@@ -1,5 +1,3 @@
-+++
-sort_by = "date"
-+++
-
-# blogs
+---
+title: blogs
+---

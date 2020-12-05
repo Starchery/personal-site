@@ -1,7 +1,6 @@
-+++
-+++
-
-# about
+---
+title: about
+---
 
 My name is Randy Henry.
 My projects are visible on my

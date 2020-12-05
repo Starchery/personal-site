@@ -1,6 +1,10 @@
 {{ define "content" }}
-  {{ .Content | safeHTML }}
-  <div class="footer-about">
-    <a href="#top">Back to top</a>
-  </div>
+
+    <h1>{{ .Title }}</h1>
+    {{ partial "util/date-and-tags.html" . }}
+    {{ .Content | safeHTML }}
+    {{ partial "related.html" . }}
+    {{ partial "comments.html" . }}
+    {{ partial "util/back-to-top.html" . }}
+
 {{ end}}
