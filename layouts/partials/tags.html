@@ -1,7 +1,9 @@
 {{ with .Params.tags }}
-  <i data-feather="tag"></i>
+  {{/*  <i data-feather="tag"></i>  */}}
   {{ range . }}
       {{ $href := print (absURL "tags/") (urlize .) }}
-      <a href="{{ $href }}">{{ . }}</a>
+      <span class="tags">
+        <a href="{{ $href }}">{{ . }}</a>
+      </span>
   {{ end }}
 {{ end }}

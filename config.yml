@@ -10,17 +10,11 @@ params:
 
 markup:
   highlight:
-    lineNos: true
     style: trac
 
 
 menu:
   main:
-    - name: *title
-      pre: home
-      url: /
-      weight: 1
-
     - name: blogs
       pre: edit
       url: /blog/

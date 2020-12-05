@@ -18,8 +18,8 @@ but I might occasionally talk about music, among other things.
     if you encounter any weirdness.
 </div>
 
-Links are set in [small caps](/).
-Unlike [practical typography](https://0x0.st/Njj5),
+Links are set in [small caps.](/)
+Unlike [practical typography,](https://0x0.st/Njj5)
 both cross-references and external links are set this way.
 
 The faux nav bar is an exception:

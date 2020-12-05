@@ -1,8 +1,8 @@
 {{ define "content" }}
     <article>
         <h1>{{ .Title }}</h1>
-        {{ partial "toc.html" . }}
         {{ partial "util/date-and-tags.html" . }}
+        {{ partial "toc.html" . }}
         {{ .Content }}
         {{ partial "related.html" . }}
         {{ partial "comments.html" . }}

@@ -18,6 +18,14 @@ I have
 [working solutions](https://github.com/Starchery/advent/tree/master/2019)
 for days 1 and 2 in both Python and Rust.
 
+You’ll see something that looks like a solution for day 3 parts 1 and 2
+at that link, but it’s half-baked and doesn’t work.
+I got two and a half days in before I lost interest.
+The puzzles themselves are great,
+it was just difficult to justify spending time on them.
+I intend to go back and at the *very least* finish day 3,
+but the 2020 challenges have monopolized my attention.
+
 {{< aside >}}
 Also a C++ one for that I didn’t bother committing—I
 just wanted to see how much C++ I could recall from memory.
@@ -27,14 +35,6 @@ Like, in ~~2020~~ 2019?
 I had to roll up my sleeves and write my own.
 It’s a miracle C++ devs get anything done.
 {{< /aside >}}
-
-You’ll see something that looks like a solution for day 3 parts 1 and 2
-at that link, but it’s half-baked and doesn’t work.
-I got two and a half days in before I lost interest.
-The puzzles themselves are great,
-it was just difficult to justify spending time on them.
-I intend to go back and at the *very least* finish day 3,
-but the 2020 challenges have monopolized my attention.
 
 This year will be different.
 I told myself
@@ -510,8 +510,6 @@ The astute (read: literate) among us will realize that this corresponds to a
 [logical XOR (⊕) operation](https://en.wikipedia.org/wiki/Exclusive_or).
 Python has a `xor` operator built in—they pronounce it like `^`.
 
-{{< tweet 1334890640375767054>}}
-
 This is pretty simple—just add a new method to the `Line` `dataclass`.
 However, **the concept of “indices” as presented in the puzzle is 1-based.**
 So we need to do some math on our bounds.
@@ -530,7 +528,7 @@ Yes, I really like nested functions.
 
 <div class="language-tag">Python</div>
 
-```python
+```python {hl_lines=["11-17", "19-22"]}
 # old stuff...
 @dataclasses.dataclass
 class Line:

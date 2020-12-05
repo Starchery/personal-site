@@ -1,9 +1,16 @@
-<div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center">
-      {{ range .Site.Menus.main }}
-        {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
-        {{ $text := print $icon " " .Name | safeHTML }}
-        <a class="nav-link" href="{{ .URL }}">{{ $text }}</a>
-      {{ end }}
-    </nav>
-</div>
+<header>
+  <div id="hleft">
+    <div class="site-title">
+      <a href="/" class="headlink">{{ .Site.Title }}</a>
+    </div>
+  </div>
+  <div id="hright">
+      <nav id="nav">
+        {{ range .Site.Menus.main }}
+          {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
+          {{ $text := print $icon " " .Name | safeHTML }}
+          <a class="headlink" href="{{ .URL }}">{{ $text }}</a>
+        {{ end }}
+      </nav>
+  </div>
+</header>

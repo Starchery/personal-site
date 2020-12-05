@@ -103,12 +103,12 @@ body {
 
   pre {
     // border-radius: 4px;
-    border: 1px solid #e2e8f0;
+    // border: 1px solid #e2e8f0;
     overflow: auto;
-    padding: 1.5rem 1rem 1rem 1rem;
-    line-height: 1.1;
-    max-width: 100%;
-    margin-top: 1.2rem;
+    // padding: 1.5rem 1rem 1rem 1rem;
+    // line-height: 1.1;
+    // max-width: 100%;
+    // margin-top: 1.2rem;
     // margin-left: 2rem;
     // margin-right: 2rem;
 
@@ -294,7 +294,7 @@ header {
   }
 }
 
-.aside, aside {
+aside {
   @extend %sidebar;
   &, > a {
     color: #485666;
@@ -390,7 +390,7 @@ hr {
     width: 100%;
   }
 
-  .aside {
+  aside {
     @extend %sidebar;
     // background-color: #E2E8F0;
     padding: 0.3rem 0.5rem;
@@ -400,6 +400,9 @@ hr {
     border: 1px solid #e2e8f0;
     border-left: 6px solid #e2e8f0;
     margin-bottom: 1em;
+    > p {
+      text-align: inherit;
+    }
   }
 }
 

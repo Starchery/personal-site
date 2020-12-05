@@ -160,6 +160,11 @@ ol li::before {
   // margin-inline-end: 1ch;
 }
 
+svg.feather {
+  height: 1em;
+  width: 1em;
+}
+
 @media (max-width: 640px) {
   ol li::before {
     margin-left: -1.8em;

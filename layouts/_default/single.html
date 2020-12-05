@@ -2,7 +2,6 @@
 
     <h1>{{ .Title }}</h1>
     {{ .Content | safeHTML }}
-    {{ partial "related.html" . }}
     {{ partial "util/back-to-top.html" . }}
 
 {{ end}}
