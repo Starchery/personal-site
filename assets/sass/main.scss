@@ -119,3 +119,11 @@ img {
   }
 }
 
+.toc {
+  text-align: left;
+  ul > li {
+    margin-bottom: .3rem;
+    padding-left: .3rem;
+    margin-left: .5rem;
+  }
+}

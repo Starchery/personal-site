@@ -13,8 +13,12 @@ is live and programmers everywhere are flexing their golfing skills on anyone bo
 I’m new to this whole thing—I
 didn’t even know about AoC until 2019.
 
-<div class="aside">
+I made an attempt to get through the challenges last year in multiple languages.
+I have
+[working solutions](https://github.com/Starchery/advent/tree/master/2019)
+for days 1 and 2 in both Python and Rust.
 
+{{< aside >}}
 Also a C++ one for that I didn’t bother committing—I
 just wanted to see how much C++ I could recall from memory.
 
@@ -22,13 +26,7 @@ Did you know there’s no `string::split` in `std`?
 Like, in ~~2020~~ 2019?
 I had to roll up my sleeves and write my own.
 It’s a miracle C++ devs get anything done.
-
-</div>
-
-I made an attempt to get through the challenges last year in multiple languages.
-I have
-[working solutions](https://github.com/Starchery/advent/tree/master/2019)
-for days 1 and 2 in both Python and Rust.
+{{< /aside >}}
 
 You’ll see something that looks like a solution for day 3 parts 1 and 2
 at that link, but it’s half-baked and doesn’t work.
@@ -98,7 +96,7 @@ or the most recent day if none was given.
 
 The `run` function is infinitely more sinister:
 
-<div class="aside">
+{{< aside >}}
 
 You should be super suspicious of that `eval`.
 It’s needed because we’re parametrizing the solver
@@ -110,7 +108,7 @@ It’s okay.
 It won’t hurt you.
 Even `goto` is the best tool for the job sometimes.
 
-</div>
+{{< /aside >}}
 
 <div class="language-tag">Python</div>
 
@@ -186,11 +184,9 @@ I hand-rolled my own `product` function,
 only to learn later that one is already in the standard library
 as `math.prod`. Oh well.
 
-<div class="aside">
-
+{{< aside >}}
 Python really is the exact opposite of C++.
-
-</div>
+{{< /aside >}}
 
 <div class="language-tag">Python</div>
 
@@ -294,7 +290,7 @@ You read this as:
 2. The word must have `1 <= N <= 3` `b`s in it.
 3. The word must have `2 <= N <= 9` `c`s in it.
 
-<div class="aside">
+{{< aside >}}
 
 If upon hearing this,
 your mind immediately went “regex,”
@@ -302,7 +298,7 @@ congratulations, you are smarter than I.
 
 I went the long way round. Strap in.
 
-</div>
+{{< /aside >}}
 
 You get the picture.
 Given this criteria,
@@ -318,15 +314,13 @@ My immediate thought was that each line has the same information,
 just with different values.
 I should make a type representing a line.
 
-<div class="aside">
-
+{{< aside >}}
 A dataclass is the closest thing Python has to structs.
 
 If that means nothing to you, it’s a record.
 
 If that means nothing to you, it’s a `namedtuple` but cooler.
-
-</div>
+{{< /aside >}}
 
 <div class="language-tag">Python</div>
 
@@ -412,11 +406,9 @@ def part1(infile):
     return len(tuple(filter(Line.is_valid, parse(infile))))
 ```
 
-<div class="aside">
-
+{{< aside >}}
 The `+ 1` is needed because `range` is inclusive-exclusive.
-
-</div>
+{{< /aside >}}
 
 This gave me an answer that *seemed* correct,
 but was woefully incorrect.
@@ -446,13 +438,13 @@ Cats and dogs living together. ∎
 
 The sensible thing is to accept that this is a three-step process:
 
-<div class="aside">
+{{< aside >}}
 
 No, the sensible thing is
-<code>(\d+)-(\d+)&nbsp;(\w):&nbsp;(\w*)</code>.
+`(\d+)-(\d+) (\w): (\w*)`.
 But we’re well beyond that point.
 
-</div>
+{{< /aside >}}
 
 1. Split the line on whitespace.
 2. Split the first group on `'-'`
@@ -518,11 +510,13 @@ The astute (read: literate) among us will realize that this corresponds to a
 [logical XOR (⊕) operation](https://en.wikipedia.org/wiki/Exclusive_or).
 Python has a `xor` operator built in—they pronounce it like `^`.
 
+{{< tweet 1334890640375767054>}}
+
 This is pretty simple—just add a new method to the `Line` `dataclass`.
 However, **the concept of “indices” as presented in the puzzle is 1-based.**
 So we need to do some math on our bounds.
 
-<div class="aside">
+{{< aside >}}
 
 Side notes:
 
@@ -532,7 +526,7 @@ I’ll get git diff style line highlighting working soon.
 
 Yes, I really like nested functions.
 
-</div>
+{{< /aside >}}
 
 <div class="language-tag">Python</div>
 

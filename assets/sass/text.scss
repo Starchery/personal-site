@@ -113,6 +113,7 @@ body {
     // margin-right: 2rem;
 
     & > code {
+      white-space: inherit;
       font-family: "Fira Code", "FiraCode NF", "Consolas", monospace;
       font-size: 80%;
     }
@@ -149,6 +150,7 @@ code {
   // padding: 0rem 0.25rem;
   // border: 1px solid #e2e8f0;
 
+  white-space: nowrap;
   font-family: 'CMU Typewriter Text', 'Consolas', monospace;
 //   font-size: 108%;
   background-color: white;
@@ -292,7 +294,7 @@ header {
   }
 }
 
-.aside {
+.aside, aside {
   @extend %sidebar;
   &, > a {
     color: #485666;
@@ -301,6 +303,9 @@ header {
   hyphens: none;
   // font-family: Arial, Helvetica, sans-serif;
   letter-spacing: .03em;
+  > p {
+    text-align: right;
+  }
 }
 
 p {
