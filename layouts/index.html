@@ -1,6 +1,9 @@
-{{ define "content" }}
+{{ define "styles" }}
+  {{ $style := resources.Get "sass/index.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
 
-  <h1>{{ .Title }}</h1>
+{{ define "content" }}
 
   {{ .Content | safeHTML }}
 

@@ -83,24 +83,8 @@ h1 {
         @extend %elem;
     }
     .post-preview {
-        &:first-of-type {
-            .post-title {
-                margin-top: 0;
-            }
-        }
-        margin-left: 1.3em;
+        margin-left: 1.3rem;
         margin-bottom: 1rem;
-        .post-title {
-            font-weight: normal;
-            margin-bottom: -.1em;
-        }
-        .summary {
-            display: none;
-            font-size: 80%;
-            a {
-                margin-left: .5em;
-            }
-        }
     }
 }
 

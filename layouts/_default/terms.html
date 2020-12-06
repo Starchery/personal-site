@@ -1,11 +1,12 @@
 {{ define "content" }}
 
-    <h1>{{ .Title }}</h1>
     {{ range .Data.Terms.Alphabetical }}
-        <p>
-          <a href="{{ .Page.Permalink }}">
-            {{ .Page.Title }} ({{- .Count -}})
-          </a>
+        <p class="taglist">
+          <span class="tags">
+            <a href="{{ .Page.Permalink }}">
+              {{ .Page.Title }}<sup>{{- .Count -}}</sup>
+            </a>
+          </span>
         </p>
     {{ end }}
 

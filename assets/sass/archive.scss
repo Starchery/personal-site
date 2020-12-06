@@ -1,13 +1,4 @@
 .archive {
-    &-posts {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    &-year {
-        margin-top: 40px;
-    }
-
     &-year:not(:last-of-type) {
         border-bottom: 2px solid #24292e;
     }
@@ -15,58 +6,35 @@
     &-month {
         display: flex;
         align-items: flex-start;
-        padding: 10px 0;
+        margin-top: 1rem;
     }
 
+
     &-month-header {
-        margin: 25px 0;
-        width: 200px;
+        margin-top: 0;
+        width: 25%;
+        color: #485667;
     }
 
     &-month:not(:last-of-type) {
         border-bottom: 1px solid #24292e;
     }
 
-    &-entry {
-        position: relative;
-        padding: 5px;
-        margin: 10px 0;
-
-        &:hover {
-            box-shadow: 0 0 0 0 0.25rem;
-        }
-
-        a:focus {
-            text-decoration: underline;
-        }
-        &:focus-within {
-            box-shadow: 0 0 0 0 0.25rem;
-            a:focus {
-                text-decoration: none;
-            }
-        }
-    }
-
-    &-entry-title {
-        margin: 5px 0;
-        font-weight: 400;
-    }
-
     &-count,
     &-meta {
         color: #485667;
-        font-size: 14px;
+        font-size: 80%;
+    }
+
+    &-count {
+        margin-left: -1ch;
     }
 }
 
-@media (max-width:800px) {
-    .article {
+@media (max-width:500px) {
+    .archive {
         &-month {
             flex-direction: column;
-        }
-
-        &-year {
-            margin-top: 20px;
         }
     }
 }

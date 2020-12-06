@@ -1,3 +1,4 @@
 ---
 title: blogs
+layout: archive
 ---

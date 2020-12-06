@@ -41,7 +41,10 @@ h6 {
   letter-spacing: .06em;
   line-height: 1.2;
   margin-bottom: 0.4rem;
-  margin-top: 1.4rem;
+  margin-top: 0.4rem;
+  .blog-post-content & {
+    margin-top: 1.4rem;
+  }
   font-size: 1rem;
 }
 
@@ -186,7 +189,7 @@ a {
     border-radius: 8px;
   }
   &:hover {
-    background-color: #e2e8f0;
+    background-color: #ecf0f5;
   }
 
   &.headlink {
@@ -265,19 +268,11 @@ $footnote-space: 2rem;
 header {
   @extend %sidebar;
   border-top: 3px solid #24292e;
+  > div {
+    padding: .2em 0;
+  }
   #hleft {
     font-weight: 600;
-    .profile-icon {
-      display: none;
-      border: none;
-      height: 50px;
-      width: 50px;
-      position: relative;
-
-      img {
-        border-radius: 50%;
-      }
-    }
     .site-title {
       .headlink {
         @extend %lowercase_header;
@@ -314,8 +309,11 @@ p {
 }
 
 nav {
-  a:nth-child(1) {
-    z-index: 1;
+  a {
+    padding: .2em 0;
+    &:nth-child(1) {
+      z-index: 1;
+    }
   }
   // display: flex;
   display: grid;
@@ -334,17 +332,17 @@ hr {
   margin-bottom: 2rem;
 }
 
-.posts-container {
-  display: flex;
-  align-content: center;
-  // align-items: center;
-  justify-content: center;
-  flex-direction: row;
+// .posts-container {
+//   display: flex;
+//   align-content: center;
+//   // align-items: center;
+//   justify-content: center;
+//   flex-direction: row;
 
-  #left {
-    margin-right: 3rem;
-  }
-}
+//   #left {
+//     margin-right: 3rem;
+//   }
+// }
 
 @media (max-width: 640px) {
   body {

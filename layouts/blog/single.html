@@ -1,11 +1,18 @@
-{{ define "content" }}
-    <article>
+{{ define "title" }}
+
+    <div class="post-title">
         <h1>{{ .Title }}</h1>
         {{ partial "util/date-and-tags.html" . }}
+    </div>
+
+{{ end }}
+
+{{ define "content" }}
+    <article class="blog-post-content">
         {{ partial "toc.html" . }}
         {{ .Content }}
+    </article>
         {{ partial "related.html" . }}
         {{ partial "comments.html" . }}
         {{ partial "util/back-to-top.html" . }}
-    </article>
 {{ end }}

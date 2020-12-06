@@ -7,6 +7,9 @@
         {{ partial "nav.html" . }}
     {{ end }}
     <main>
+      {{ block "title" . }}
+        <h1>{{ .Title }}</h1>
+      {{ end }}
       {{ block "content" . }} {{ end }}
     </main>
   {{ partial "script.html" . }}

@@ -1,6 +1,5 @@
 {{ define "content" }}
 
-    <h1>{{ .Title }}</h1>
     {{ range .Pages.ByPublishDate.Reverse }}
         {{ partial "post-preview.html" . }}
         <div class="summary">
