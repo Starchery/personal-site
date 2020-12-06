@@ -5,13 +5,17 @@ title: &title ydnar.dev
 taxonomies:
   tag: "tags"
 
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+
 params:
   dateFormat: Jan 2, 2006
 
 markup:
   highlight:
-    style: trac
-
+    style: friendly
+  # tableOfContents:
+  #   ordered: true
 
 menu:
   main:

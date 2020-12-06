@@ -526,7 +526,7 @@ Yes, I really like nested functions.
 
 {{< /aside >}}
 
-<div class="language-tag">Python</div>
+{{< lang python >}}
 
 ```python {hl_lines=["11-17", "19-22"]}
 # old stuff...

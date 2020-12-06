@@ -69,18 +69,21 @@ h1 {
 .posts-container {
     flex-direction: column;
     %elem {
-        h2 {
-            margin-top: 1rem;
-        }
         flex-basis: 0;
         flex-grow: 1;
         margin-bottom: 2rem;
     }
     #left {
+        h2 {
+            margin-top: 3rem;
+        }
         @extend %elem;
     }
     #right {
         @extend %elem;
+        h2 {
+            margin-top: 1rem;
+        }
     }
     .post-preview {
         margin-left: 1.3rem;

@@ -18,7 +18,7 @@ html {
   max-width: 1000px;
   min-height: 100%;
   position: relative;
-  background-color: #fafbfc;
+  // background-color: #fafbfc;
 }
 
 @media all and (min-width:1000px) { html { font-size: 24px; } }
@@ -57,7 +57,7 @@ html {
 
   li {
     margin-left: auto;
-    padding-left: 0.5rem;
+    // padding-left: 0.5rem;
   }
 
   %sidebar {
@@ -95,7 +95,7 @@ html {
 %tag {
   background: #E2E8F0;
   padding: .3em .7em;
-  color: #465668;
+  color: #526d8b;
   font-family: sans-serif;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -124,6 +124,9 @@ html {
         // font-weight: normal;
         margin-bottom: -.2em;
     }
+    small {
+      color:#465668;
+    }
     .summary {
         // display: none;
         font-size: 80%;
@@ -141,7 +144,7 @@ ol li::marker {
 }
 
 ol li::before {
-  margin-top: 5px;
+  margin-top: 2px;
   content: counter(list-item);
   // padding: 8px;
   // display: inline-block;
@@ -166,8 +169,12 @@ svg.feather {
 }
 
 @media (max-width: 640px) {
-  ol li::before {
-    margin-left: -1.8em;
+  ol li {
+    margin-left: 1em;
+  }
+
+  ul li {
+    margin-left: 1em;
   }
 }
 

@@ -1,4 +1,7 @@
 .archive {
+    &-year:first-of-type {
+        margin-top: 1.4em;
+    }
     &-year:not(:last-of-type) {
         border-bottom: 2px solid #24292e;
     }
@@ -6,7 +9,7 @@
     &-month {
         display: flex;
         align-items: flex-start;
-        margin-top: 1rem;
+        margin-top: .6rem;
     }
 
 
