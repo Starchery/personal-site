@@ -14,4 +14,5 @@
     </main>
   {{ partial "script.html" . }}
   </body>
+  {{ if .Params.hasMath}}{{ partial "util/katex.html" . }}{{ end }}
 </html>

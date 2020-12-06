@@ -9,7 +9,6 @@
 
 {{ define "content" }}
     <article class="blog-post-content">
-        {{ partial "toc.html" . }}
         {{ .Content | safeHTML }}
     </article>
         {{ partial "related.html" . }}
