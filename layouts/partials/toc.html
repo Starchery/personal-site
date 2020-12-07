@@ -1,6 +1,10 @@
 {{ if gt .WordCount 400 }}
-    <aside class="toc">
-        <h2>table of contents</h2>
-        {{ .TableOfContents }}
-    </aside>
+    <div class="toc">
+        <details>
+            <summary>
+              <div class="details" accesskey="c">{{- i18n "toc" | default "Table of Contents" }}</div>
+            </summary>
+            {{ .TableOfContents }}
+          </details>
+    </div>
 {{ end }}

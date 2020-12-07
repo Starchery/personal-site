@@ -12,14 +12,16 @@ params:
   dateFormat: Jan 2, 2006
   socialIcons:
     - name: github
-      url: "https://github.com/adityatelange/hugo-PaperMod"
+      url: https://github.com/Starchery
     - name: twitter
-      url: "https://twitter.com/thateasyfolks"
-    - name: email
-      url: "mailto:randolph.henry.work@gmail.com"
+      url: https://twitter.com/thateasyfolks
+    - name: mail
+      url: mailto:randolph.henry.work@gmail.com
+    - name: linkedin
+      url: https://www.linkedin.com/in/randolph-henry-a5073714b/
 
-markup:
-  highlight:
+# markup:
+#   highlight:
     # style: friendly
   # tableOfContents:
   #   ordered: true

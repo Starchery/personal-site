@@ -11,12 +11,12 @@ but I might occasionally talk about music, among other things.
 
 ## how to use this site
 
-<div class="aside">
-    This site is a work-in-progress.
-    Please
-    <a href="mailto:randolph.henry.work@gmail.com">let me know</a>
-    if you encounter any weirdness.
-</div>
+{{< aside >}}
+This site is a work-in-progress.
+Please
+[let me know](mailto:randolph.henry.work@gmail.com)
+if you encounter any weirdness.
+{{< /aside >}}
 
 Links are set in [small caps.](/)
 Unlike [practical typography,](https://0x0.st/Njj5)

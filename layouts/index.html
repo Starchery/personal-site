@@ -7,6 +7,14 @@
 
   {{ .Content | safeHTML }}
 
+  <div class="s-icons">
+    {{ range .Site.Params.socialIcons }}
+      {{ $icon := printf "<i data-feather=\"%s\"></i>" .name }}
+      {{ $text := print $icon " " .name | safeHTML }}
+      <a class="s-icon" href="{{ .url }}">{{ $text }}</a>
+    {{ end }}
+  </div>
+
   <div class="posts-container">
     <div id="left">
       <h2>Recent posts</h2>
