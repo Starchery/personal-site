@@ -532,7 +532,7 @@ Side notes:
 
 Yes, `^` works on `bool`s as well as `int`s.
 
-I’ll get git diff style line highlighting working soon.
+I’ll get git diff style line highlighting working soon. *EDIT 2020-12-07: done!*
 
 Yes, I really like nested functions.
 
