@@ -3,7 +3,10 @@
     <link rel="stylesheet" href="{{ $style404.Permalink }}">
 {{ end }}
 
+{{ define "title" }}
+    <h1 style="text-align: center;">404</h1>
+{{ end }}
+
 {{ define "content" }}
-    <h1>404</h1>
-    <p>Page not found. <a href="/">Go home</a>?</p>
+    <p style="text-align: center;">Page not found. <a href="/">Go home</a>?</p>
 {{ end }}
