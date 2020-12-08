@@ -13,18 +13,10 @@ params:
   socialIcons:
     - name: github
       url: https://github.com/Starchery
-    - name: twitter
-      url: https://twitter.com/thateasyfolks
-    - name: mail
+    - name: email
       url: mailto:randolph.henry.work@gmail.com
     - name: linkedin
       url: https://www.linkedin.com/in/randolph-henry-a5073714b/
-
-# markup:
-#   highlight:
-    # style: friendly
-  # tableOfContents:
-  #   ordered: true
 
 menu:
   main:

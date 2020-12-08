@@ -58,7 +58,7 @@ There’s a frankly absurd amount of
 [starter templates](https://github.com/Bogdanp/awesome-advent-of-code)
 you can use to bootstrap a system for submitting results;
 I decided to be cliche and
-[write my own](https://github.com/Starchery/advent/blob/master/2020/aoc/__main__.py),
+[write my own,](https://github.com/Starchery/advent/blob/master/2020/aoc/__main__.py)
 though.
 I hate being beholden to the spaghetti of
 others—if I have to deal with spaghetti, **it better be my own**.

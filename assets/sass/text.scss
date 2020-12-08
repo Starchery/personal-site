@@ -1,5 +1,4 @@
-@import "./fonts.scss";
-@import "./normalize.scss";
+// @import "./fonts.scss";
 
 $text: #24292e;
 
@@ -12,7 +11,7 @@ body {
   padding: 3rem 0 3rem 0;
   margin-left: 12rem;
   margin-right: 2.5rem;
-  min-height: 100vh;
+  // min-height: 100vh;
   color: $text;
 }
 
@@ -228,6 +227,10 @@ header {
     font-size: 90%;
     margin: auto;
     margin-right: 0;
+    svg {
+      height: .9em;
+      width: .9em;
+    }
   }
 }
 

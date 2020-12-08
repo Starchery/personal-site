@@ -1,25 +1,19 @@
-{{ define "styles" }}
-  {{ $style := resources.Get "sass/index.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-{{ end }}
-
 {{ define "content" }}
 
   {{ .Content | safeHTML }}
 
   <div class="s-icons">
     {{ range .Site.Params.socialIcons }}
-      {{ $icon := printf "<i data-feather=\"%s\"></i>" .name }}
-      {{ $text := print $icon " " .name | safeHTML }}
-      <a class="s-icon" href="{{ .url }}">{{ $text }}</a>
+      {{ $icon := printf "static/svg/%s.svg" .name | readFile | safeHTML }}
+      <a class="s-icon" href="{{ .url }}" title="{{ .name }}">{{ $icon }}</a>
     {{ end }}
   </div>
 
   <div class="posts-container">
     <div id="left">
-      <h2>Recent posts</h2>
+      <h2><a href="/blog">Recent posts</a></h2>
       {{ with .Site.GetPage "section" "blog" }}
-        {{ range first 5 .Pages }}
+        {{ range .Paginator.Pages }}
           <article class="post-preview">
             <h3 class="post-title">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -31,10 +25,6 @@
           </article>
         {{ end }}
       {{ end }}
-    </div>
-
-    <div id="right">
-      <h2>Projects</h2>
     </div>
   </div>
 
