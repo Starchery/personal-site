@@ -1,0 +1,27 @@
+// sass variables do not support overloading based on media queries
+:root {
+    --text: #24292e;
+    --subdued: #485667;
+    --subdued-color: #526d8b;
+    --subtle: #e2e8f0;
+    --subtler: #ecf0f5;
+    --bg: #fafbfc;
+    --pop: #fff;
+    --subtle-border: #bcc6d1;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #dae0e7;
+        // --subdued: #2f3841;
+        --subdued: #6d7c8f;
+        --subdued-color: #9db4cc;
+        --subtle: #313a46;
+        --subtler: #2a3138;
+        --bg: #24292e;
+        --pop: #191e20;
+        --subtle-border: #313a46;
+    }
+}
+

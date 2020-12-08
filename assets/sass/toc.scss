@@ -1,9 +1,9 @@
 .toc {
     margin-bottom: 40px;
-    border: 1px solid #e2e8f0;
-    background-color: white;
+    border: 1px solid var(--subtle);
+    background-color: var(--bg);
     padding: .5em;
-    color: #485667;
+    color: var(--subdued);
 
     details {
         text-transform: lowercase;
@@ -16,13 +16,12 @@
             }
             .details {
                 display: inline;
-                font-weight: 500
             }
         }
 
         &[open] summary {
             cursor: zoom-out;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--subtle);
             padding-bottom: .5em;
         }
     }
@@ -39,7 +38,7 @@
             margin-bottom: 0;
             margin-left: 1.7em;
             a {
-                color: #485667;
+                color: var(--subdued);
             }
         }
     }

@@ -442,9 +442,9 @@ Which leads to
 
 ```python
 min = 7
-max = 1 # empty range???
-letter = "2" # ???
-word = "ffoobar" # ???
+max = 1 ???
+letter = "2" ???
+word = "ffoobar" ???
 ```
 
 Cats and dogs living together. ∎

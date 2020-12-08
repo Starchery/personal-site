@@ -1,27 +1,19 @@
-@import "./normalize.scss", "./text.scss", "./archive.scss", "./index.scss", "./syntax.scss", "./toc.scss", "./icons.scss";
-
-// .post-preview {
-//   h3.post-title {
-//     margin-bottom: 0 !important;
-//   }
-
-//   .summary {
-//     margin-top: 0.8rem;
-//   }
-
-//   margin-bottom: 1rem;
-// }
-
+@import "./common.scss";
+@import "./normalize.scss";
+@import "./text.scss";
+@import "./archive.scss";
+@import "./index.scss";
+@import "./syntax.scss";
+@import "./toc.scss";
+@import "./icons.scss";
 
 .post-title {
   > h1 {
     @extend %lowercase_header;
     margin-bottom: 0.1em;
-    // letter-spacing: -.02em;
   }
   font-size: 1em;
 
-  // border-top: solid 3px #333;
   margin-bottom: 1.3rem;
 }
 
@@ -34,12 +26,11 @@
         @extend %tag;
         border-radius: 8px;
         &, &:hover {
-          // transition-property: background;
           transition-duration: 0.2s;
           border-radius: 8px;
         }
         &:hover {
-          background-color: #526d8b;
+          background-color: var(--subdued-color);
           color: #ccdaeb;
         }
         position: relative;
@@ -57,8 +48,6 @@ h1:first-of-type {
 }
 
 .related-container {
-  // margin-top: 3rem;
-  // margin-bottom: 4rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -66,8 +55,8 @@ h1:first-of-type {
     font-family: sans-serif;
     font-variant: small-caps;
     letter-spacing: .06em;
-    color: #485667;
-    border-bottom: 6px double #bcc6d1;
+    color: var(--subdued);
+    border-bottom: 6px double var(--subtle-border);
     margin-left: 25%;
     margin-right: 25%;
     padding: .6em;
@@ -87,14 +76,16 @@ h1:first-of-type {
       flex-direction: column;
       justify-content: center;
       .link-header {
+        color: var(--subdued);
+        font-weight: normal;
         margin-top: 0;
-        // margin-bottom: 0.;
+        margin-bottom: 0;
         height: 30%;
+        font-size: 90%;;
       }
       a {
         flex-grow: 1;
       }
-      // flex-shrink: 0;
       padding-top: 1rem;
       width: 50%;
     }
@@ -105,14 +96,15 @@ h1:first-of-type {
 .footer-about {
   margin-top: 3rem;
   margin-bottom: 1rem;
-  // margin-bottom: 3rem;
   text-align: center;
+  a {
+    color: var(--subdued);
+  }
 }
 
 img {
   max-width: 100%;
   margin: auto;
-  // border: solid rgba(0, 0, 0, 0.04);
 }
 
 .taxonomy-container {

@@ -1,31 +1,29 @@
 {{ define "content" }}
 
-  {{ .Content | safeHTML }}
+    {{ .Content | safeHTML }}
 
-  <div class="s-icons">
-    {{ range .Site.Params.socialIcons }}
-      {{ $icon := printf "static/svg/%s.svg" .name | readFile | safeHTML }}
-      <a class="s-icon" href="{{ .url }}" title="{{ .name }}">{{ $icon }}</a>
-    {{ end }}
-  </div>
-
-  <div class="posts-container">
-    <div id="left">
-      <h2><a href="/blog">Recent posts</a></h2>
-      {{ with .Site.GetPage "section" "blog" }}
-        {{ range .Paginator.Pages }}
-          <article class="post-preview">
-            <h3 class="post-title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h3>
-            {{ partial "util/date-and-tags.html" . }}
-            <div class="summary">
-              {{ .Summary }}
-            </div>
-          </article>
+    <div class="s-icons">
+        {{ range .Site.Params.socialIcons }}
+            {{ $icon := printf "static/svg/%s.svg" .name | readFile | safeHTML }}
+            <a class="s-icon" href="{{ .url }}" title="{{ .name }}">{{ $icon }}</a>
         {{ end }}
-      {{ end }}
     </div>
-  </div>
+
+    <div class="posts-container">
+        <div id="left">
+            <h2><a href="/blog">Recent posts</a></h2>
+            {{ with .Site.GetPage "section" "blog" }}
+                {{ range .Paginator.Pages }}
+                    <article class="post-preview">
+                        <h3 class="post-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        {{ partial "util/date-and-tags.html" . }}
+                        <div class="summary"> {{ .Summary }} </div>
+                    </article>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
 
 {{ end }}

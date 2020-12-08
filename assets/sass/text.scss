@@ -1,7 +1,3 @@
-// @import "./fonts.scss";
-
-$text: #24292e;
-
 body {
   // font-family: "Equity", "Equity Text A", "Inter", "Inter UI", -apple-system, sans-serif;
   font-family: sans-serif;
@@ -11,8 +7,6 @@ body {
   padding: 3rem 0 3rem 0;
   margin-left: 12rem;
   margin-right: 2.5rem;
-  // min-height: 100vh;
-  color: $text;
 }
 
 .content {
@@ -65,18 +59,13 @@ ol {
 }
 
 body {
-  b,
-  strong {
-    font-weight: 500;
-  }
-
   blockquote {
     font-family: serif;
-    border: 1px solid #e2e8f0;
-    border-left: 6px solid #e2e8f0;
-    background: #f6f8fa;
+    border: 1px solid var(--subtle);
+    border-left: 6px solid var(--subtle);
+    background: var(--bg);
     padding: 1rem 2rem 0rem 2rem;
-    color: #485666;
+    color: var(--subdued);
 
     > p {
       &:not(:last-child) {
@@ -90,11 +79,12 @@ body {
   }
 
   pre {
-    border: 1px solid #e2e8f0;
-    background-color: #fff;
+    border: 1px solid var(--subtle);
+    background-color: var(--pop);
     overflow: auto;
     padding: 1.5rem 1rem 1rem 1rem;
     line-height: 1.1;
+    margin-right: -16vw;
 
     & > code {
       white-space: inherit;
@@ -113,15 +103,15 @@ body {
   font-size: 50%;
   padding: 0.1rem 1rem;
   position: absolute;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--subtle);
 }
 
 code {
   white-space: nowrap;
   font-family: 'CMU Typewriter Text', 'Consolas', monospace;
-  background-color: #fff;
+  background-color: var(--pop);
   padding: 0 .15em;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--subtle);
   font-variant-numeric: normal;
 
   pre > & {
@@ -136,7 +126,6 @@ main {
 }
 
 a {
-  color: $text;
   text-decoration: none;
   text-transform: lowercase;
   font-variant: small-caps;
@@ -147,7 +136,11 @@ a {
     border-radius: 8px;
   }
   &:hover {
-    background-color: #ecf0f5;
+    background-color: var(--subtler);
+  }
+
+  code:hover {
+    background-color: var(--subtler);
   }
 
   &.headlink {
@@ -156,7 +149,6 @@ a {
   }
 
 }
-
 
 $footnote-space: 2rem;
 
@@ -208,7 +200,7 @@ $footnote-space: 2rem;
 
 header {
   @extend %sidebar;
-  border-top: 3px solid #24292e;
+  border-top: 3px solid var(--text);
   > div {
     padding: .2em 0;
   }
@@ -237,7 +229,7 @@ header {
 aside {
   @extend %sidebar;
   &, a {
-    color: #485666;
+    color: var(--subdued);
   }
   font-size: 75%;
   hyphens: none;
@@ -265,7 +257,7 @@ nav {
 
 
 hr {
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--subtle);
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
@@ -316,9 +308,9 @@ hr {
     margin-left: 1rem;
     margin-right: 1rem;
     width: auto;
-    border: 1px solid #e2e8f0;
-    border-left: 6px solid #e2e8f0;
-    margin-bottom: 1em;
+    border: 1px solid var(--subtle);
+    border-left: 6px solid var(--subtle);
+    margin-bottom: 1.2em;
     > p {
       text-align: inherit;
     }
@@ -337,5 +329,17 @@ hr {
 @media (max-width: 240px) {
   nav {
     display: grid;
+  }
+}
+
+@media (max-width: 1290px) {
+  body pre {
+    margin-right: -10vw;
+  }
+}
+
+@media (max-width: 1090px) {
+  body pre {
+    margin-right: -5vw;
   }
 }

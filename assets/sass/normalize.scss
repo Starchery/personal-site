@@ -18,8 +18,13 @@ html {
   max-width: 1000px;
   min-height: 100%;
   position: relative;
-  background-color: #fafbfc;
+  background-color: var(--bg);
 }
+
+body, a {
+  color: var(--text);
+}
+
 
 @media all and (min-width:1000px) { html { font-size: 24px; } }
 @media all and (max-width:740px) { html{ font-size: 18px; } }
@@ -67,16 +72,16 @@ html {
     width: 100%;
   }
 
-  .aside {
-    // background-color: #E2E8F0;
-    padding: 0.3rem 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: auto;
-    border: 1px solid #e2e8f0;
-    border-left: 6px solid #e2e8f0;
-    margin-bottom: 1em;
-  }
+  // .aside {
+  //   // background-color: #E2E8F0;
+  //   padding: 0.3rem 0.5rem;
+  //   margin-left: 1rem;
+  //   margin-right: 1rem;
+  //   width: auto;
+  //   border: 1px solid #e2e8f0;
+  //   border-left: 6px solid #e2e8f0;
+  //   margin-bottom: 1em;
+  // }
 }
 
 @media (max-width: 420px) {
@@ -93,9 +98,9 @@ html {
 }
 
 %tag {
-  background: #E2E8F0;
+  background: var(--subtle);
   padding: .3em .7em;
-  color: #526d8b;
+  color: var(--subdued-color);
   font-family: sans-serif;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -125,7 +130,7 @@ html {
         margin-bottom: -.2em;
     }
     small {
-      color:#465668;
+      color: var(--subdued);
     }
     .summary {
         // display: none;
@@ -150,7 +155,7 @@ ol li::before {
   // display: inline-block;
   text-align: center;
   // font-family: sans-serif;
-  background-color: #fff;
+  background-color: var(--pop);
   font-variant-numeric: tabular-nums;
   font-size: 80%;
   position: absolute;
