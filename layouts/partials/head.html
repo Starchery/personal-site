@@ -15,7 +15,7 @@
     <title>{{ $title }}</title>
 
     {{ block "styles" . }}
-      {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
+      {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
       <link rel="stylesheet" href="{{ $style.Permalink }}">
     {{ end }}
   </head>
