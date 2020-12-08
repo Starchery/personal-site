@@ -1,4 +1,4 @@
-baseURL: http://example.org/
+baseURL: https://ydnar.dev/
 languageCode: en-us
 title: &title ydnar.dev
 
@@ -18,9 +18,14 @@ params:
       url: mailto:randolph.henry.work@gmail.com
     - name: linkedin
       url: https://www.linkedin.com/in/randolph-henry-a5073714b/
+    - name: rss
+      url: /index.xml
 
 permalinks:
   blog: /:filename/
+
+author:
+  name: "Randy Henry"
 
 menu:
   main:

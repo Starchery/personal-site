@@ -9,6 +9,10 @@
         {{ end }}
     </div>
 
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
     <div class="posts-container">
         <div id="left">
             <h2><a href="/blog">Recent posts</a></h2>

@@ -52,7 +52,7 @@ The process is the same for every day.
 2. Part 1 of the puzzle is immediately available for your reading pleasure.
 3. There is sample input data that you’ll need to parse or process in some way to solve the puzzle.
 4. Once you submit a working solution for part 1, part 2 is revealed. It extends part 1 in some way, adding extra requirements or throwing a wrench in the works.
-5. You get a pretty star for each part you solve :)
+5. You get a pretty star for each part you solve :flushed:
 
 There’s a frankly absurd amount of
 [starter templates](https://github.com/Bogdanp/awesome-advent-of-code)
