@@ -39,4 +39,4 @@ The faux nav bar is an exception:
 ## contact me
 
 * [randolph.henry.work@gmail.com](mailto:randolph.henry.work@gmail.com)
-* [github.com/Starchery](github.com/Starchery)
+* [github.com/Starchery](https://github.com/Starchery)
