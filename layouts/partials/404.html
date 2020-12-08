@@ -1,5 +1,5 @@
 {{ define "styles" }}
-    {{ $style404 := resources.Get "sass/404.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style404 := resources.Get "sass/404.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style404.Permalink }}">
 {{ end }}
 
