@@ -13,5 +13,7 @@
       {{ block "content" . }} {{ end }}
     </main>
   </body>
+  <!-- fix FOUC caused by https://bugzilla.mozilla.org/show_bug.cgi?id=1404468 -->
+  <script>0</script>
   {{ if .Params.hasMath}}{{ partial "util/katex.html" . }}{{ end }}
 </html>
