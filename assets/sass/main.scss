@@ -1,0 +1,141 @@
+@import "./common.scss";
+@import "./normalize.scss";
+@import "./text.scss";
+@import "./archive.scss";
+@import "./index.scss";
+@import "./syntax.scss";
+@import "./toc.scss";
+@import "./icons.scss";
+
+.post-title {
+  > h1 {
+    @extend %lowercase_header;
+    margin-bottom: 0.1em;
+  }
+  font-size: 1em;
+
+  margin-bottom: 1.3rem;
+}
+
+  .tags {
+    > *:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+
+    > a {
+        @extend %tag;
+        border-radius: 8px;
+        &, &:hover {
+          transition-duration: 0.2s;
+          border-radius: 8px;
+        }
+        &:hover {
+          background-color: var(--subdued-color);
+          color: #ccdaeb;
+        }
+        position: relative;
+        top: -.23em;
+    }
+  }
+
+h1:first-of-type {
+  @extend %lowercase_header;
+}
+
+.footer-rule {
+  margin-top: 4rem;
+  display: none;
+}
+
+.related-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  &-header {
+    font-family: sans-serif;
+    font-variant: small-caps;
+    letter-spacing: .06em;
+    color: var(--subdued);
+    border-bottom: 6px double var(--subtle-border);
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: .6em;
+    font-size: 90%;
+  }
+
+  &-link-container {
+    display: flex;
+    > .link {
+      &:first-of-type {
+        padding-right: 1rem;
+        padding-left: 0;
+      }
+      padding-left: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .link-header {
+        color: var(--subdued);
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 30%;
+        font-size: 90%;;
+      }
+      a {
+        flex-grow: 1;
+      }
+      padding-top: 1rem;
+      width: 50%;
+    }
+  }
+
+}
+
+.footer-about {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  a {
+    color: var(--subdued);
+  }
+}
+
+img {
+  max-width: 100%;
+  margin: auto;
+}
+
+.taxonomy-container {
+  > .term {
+    margin-bottom: 1rem;
+  }
+}
+
+.heading {
+  .section-mark {
+    position: relative;
+    margin-left: -1em;
+    color:#485667;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: transparent;
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+p.taglist span.tags {
+  font-size: 125%;
+  a sup {
+    margin-right: -.3em;
+    font-weight: bold;
+  }
+}
+
+.post-preview .post-title {
+  font-weight: normal;
+}

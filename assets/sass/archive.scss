@@ -1,0 +1,43 @@
+.archive {
+    &-year:first-of-type {
+        margin-top: 1.4em;
+    }
+    &-year:not(:last-of-type) {
+        border-bottom: 2px solid #24292e;
+    }
+
+    &-month {
+        display: flex;
+        align-items: flex-start;
+        margin-top: .6rem;
+    }
+
+
+    &-month-header {
+        margin-top: 0;
+        width: 25%;
+        color: #485667;
+    }
+
+    &-month:not(:last-of-type) {
+        border-bottom: 1px solid #24292e;
+    }
+
+    &-count,
+    &-meta {
+        color: #485667;
+        font-size: 80%;
+    }
+
+    &-count {
+        margin-left: -1ch;
+    }
+}
+
+@media (max-width:500px) {
+    .archive {
+        &-month {
+            flex-direction: column;
+        }
+    }
+}

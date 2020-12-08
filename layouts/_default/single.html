@@ -1,0 +1,6 @@
+{{ define "content" }}
+
+    {{ .Content | safeHTML }}
+    {{ partial "util/back-to-top.html" . }}
+
+{{ end}}

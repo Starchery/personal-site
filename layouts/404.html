@@ -1,0 +1,9 @@
+{{ define "styles" }}
+    {{ $style404 := resources.Get "sass/404.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style404.Permalink }}">
+{{ end }}
+
+{{ define "content" }}
+    <h1>404</h1>
+    <p>Page not found. <a href="/">Go home</a>?</p>
+{{ end }}

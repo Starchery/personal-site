@@ -1,0 +1,50 @@
+baseURL: https://ydnar.dev/
+languageCode: en-us
+title: &title ydnar.dev
+
+taxonomies:
+  tag: "tags"
+
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+enableEmoji: true
+
+params:
+  dateFormat: Jan 2, 2006
+  socialIcons:
+    - name: github
+      url: https://github.com/Starchery
+    - name: email
+      url: mailto:randolph.henry.work@gmail.com
+    - name: linkedin
+      url: https://www.linkedin.com/in/randolph-henry-a5073714b/
+    - name: rss
+      url: /index.xml
+
+permalinks:
+  blog: /:filename/
+
+author:
+  name: "Randy Henry"
+
+menu:
+  main:
+    - name: blogs
+      pre: edit
+      url: /blog/
+      weight: 2
+
+    - name: tags
+      pre: tag
+      url: /tags/
+      weight: 3
+
+    - name: projects
+      pre: box
+      url: /projects/
+      weight: 4
+
+    - name: about
+      pre: user
+      url: /about/
+      weight: 5

@@ -1,18 +1,25 @@
-+++
-title = "Advent of Code 2020 — Days 1–2"
-description = "Looking back over the start of AoC 2020. Comedy ensues."
-[taxonomies]
-tags = [ "programming", "advent of code" ]
-+++
+---
+title: Advent of Code 2020 — Days 1–2
+date: 2020-12-03
+summary: Looking back over the start of AoC 2020. Comedy ensues.
+hasMath: true
+tags:
+    - programming
+    - advent-of-code
+---
 
 It’s that time of year.
-[Advent of Code](adventofcode.com)
+[Advent of Code](https://adventofcode.com)
 is live and programmers everywhere are flexing their golfing skills on anyone bored enough to listen—and this year, I’m one of them.
 I’m new to this whole thing—I
 didn’t even know about AoC until 2019.
 
-<div class="aside">
+I made an attempt to get through the challenges last year in multiple languages.
+I have
+[working solutions](https://github.com/Starchery/advent/tree/master/2019)
+for days 1 and 2 in both Python and Rust.
 
+{{< aside >}}
 Also a C++ one for that I didn’t bother committing—I
 just wanted to see how much C++ I could recall from memory.
 
@@ -20,13 +27,7 @@ Did you know there’s no `string::split` in `std`?
 Like, in ~~2020~~ 2019?
 I had to roll up my sleeves and write my own.
 It’s a miracle C++ devs get anything done.
-
-</div>
-
-I made an attempt to get through the challenges last year in multiple languages.
-I have
-[working solutions](https://github.com/Starchery/advent/tree/master/2019)
-for days 1 and 2 in both Python and Rust.
+{{< /aside >}}
 
 You’ll see something that looks like a solution for day 3 parts 1 and 2
 at that link, but it’s half-baked and doesn’t work.
@@ -35,6 +36,7 @@ The puzzles themselves are great,
 it was just difficult to justify spending time on them.
 I intend to go back and at the *very least* finish day 3,
 but the 2020 challenges have monopolized my attention.
+
 
 This year will be different.
 I told myself
@@ -50,13 +52,13 @@ The process is the same for every day.
 2. Part 1 of the puzzle is immediately available for your reading pleasure.
 3. There is sample input data that you’ll need to parse or process in some way to solve the puzzle.
 4. Once you submit a working solution for part 1, part 2 is revealed. It extends part 1 in some way, adding extra requirements or throwing a wrench in the works.
-5. You get a pretty star for each part you solve :)
+5. You get a pretty star for each part you solve :flushed:
 
 There’s a frankly absurd amount of
 [starter templates](https://github.com/Bogdanp/awesome-advent-of-code)
 you can use to bootstrap a system for submitting results;
 I decided to be cliche and
-[write my own](https://github.com/Starchery/advent/blob/master/2020/aoc/__main__.py),
+[write my own,](https://github.com/Starchery/advent/blob/master/2020/aoc/__main__.py)
 though.
 I hate being beholden to the spaghetti of
 others—if I have to deal with spaghetti, **it better be my own**.
@@ -68,8 +70,7 @@ Do not fight me on this.
 
 The crux of my solution is `aoc/__main__.py`:
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def main(args):
     try:
@@ -96,7 +97,7 @@ or the most recent day if none was given.
 
 The `run` function is infinitely more sinister:
 
-<div class="aside">
+{{< aside >}}
 
 You should be super suspicious of that `eval`.
 It’s needed because we’re parametrizing the solver
@@ -108,10 +109,9 @@ It’s okay.
 It won’t hurt you.
 Even `goto` is the best tool for the job sometimes.
 
-</div>
+{{< /aside >}}
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def run(day):
     infile = AOC_DIR / f"day{day}" / "input"
@@ -147,12 +147,13 @@ I survive.
 
 Day 1 was a simple filter map reduce.
 Given a list of positive integers,
-find two numbers that sum to 2020
+find two numbers that sum to 2020[^1]
 and calculate their product.
 You know, the kind of problem that would be a one-liner in Haskell.
 
-<div class="language-tag">Python</div>
+[^1]: This is a variation on the unfortunately named [3SUM problem.](https://en.wikipedia.org/wiki/3SUM)
 
+{{< lang Python >}}
 ```python
 def parse(fileobj, factory=int):
     yield from map(factory, fileobj)
@@ -169,8 +170,7 @@ My first guess was to get the
 [cartesian product](https://en.wikipedia.org/wiki/Cartesian_product)
 of the numbers with themselves and pluck the first pair that sums to 2020.
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def n_nums_that_sum_to(total, xs, n=2):
     pairs = itertools.product(xs, repeat=n)
@@ -184,14 +184,11 @@ I hand-rolled my own `product` function,
 only to learn later that one is already in the standard library
 as `math.prod`. Oh well.
 
-<div class="aside">
-
+{{< aside >}}
 Python really is the exact opposite of C++.
+{{< /aside >}}
 
-</div>
-
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def product(xs):
     return functools.reduce(operator.mul, xs, 1)
@@ -211,16 +208,14 @@ that sum to 2020.
 Since we parametrized `part1` over the number of elements in each pair,
 we can just pass in `3` instead of `2` for `n`.
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def part2(infile):
     return part1(infile, n=3)
 ```
 
-<div class="language-tag">Shell</div>
-
-```sh
+{{< lang Shell >}}
+```
 ~src/advent/2020 $ python aoc 1
                 Day 01
 ====================================
@@ -236,34 +231,31 @@ but these values were accepted. Success.
 The astute (read: awake) will realize that using the cartesian product
 to find two numbers that sum to 2020 is super nonsensical.
 Consider the following product of two identical sets:
+$$A = B = \\{1,\\,2\\}$$
+$$A \times B = \\{1,\\,2\\} \times \\{1,\\,2\\}$$
+$$= \left\\{(1,\\,1),\\, (1,\\,2),\\, (2,\\,1), (2,\\,2)\right\\} $$
 
-> A = B = {1,2}
->
-> A × B = {1,2} × {1,2} = {(1,1), (1,2), (2,1), (2,2)}
-
-Both (1,2) and (2,1) are members of the resultant set.
-Addition is commutative and associative,
+Both $(1,\\,2)$ and $(2,\\,1)$ are members of the resultant set.
+Addition is commutative ($a + b = b + a$),
 so checking both of these is wasteful.
 What we’re really looking for is the set of unique
 [combinations](https://en.wikipedia.org/wiki/Combination)
-from the input data.
+$n \choose k$from the input data.
 
-Because `itertools` is amazing, it includes a `combinations` function.
+Because `itertools` is amazing, it includes a [`combinations`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function.
 
-<div class="language-tag">Python</div>
-
-```python
+{{< lang Python >}}
+```diff
 def n_nums_that_sum_to(total, xs, n=2):
-    # pairs = itertools.product(xs, repeat=n)
-    combos = itertools.combinations(xs, n)
+-   pairs = itertools.product(xs, repeat=n)
++   combos = itertools.combinations(xs, n)
     return next(filter(lambda ns: sum(ns) == total, combos))
 ```
 
 This gives us a free performance boost.
 
-<div class="language-tag">Shell</div>
-
-```sh
+{{< lang Shell >}}
+```
 ~src/advent/2020 $ python aoc 1
                 Day 01
 ====================================
@@ -271,9 +263,25 @@ Part 1:     974304      (695.47μs)
 Part 2:  236430480      (99.94ms)
 ```
 
-It’s still pretty damn slow for what it’s doing,[^1]
-but this is what I came up with on my own, so it’s okay.[^2]
+It’s still pretty damn slow for what it’s doing,[^2]
+but this is what I came up with on my own, so it’s okay.[^3]
 I can just blame Python if anyone asks.
+
+[^2]: One interesting solution I saw was to sort the input initially.
+    Work from the ends of the list inward.
+    If the sum of those two numbers is $\gt 2020$,
+    decrement the end pointer.
+    If the sum is $\lt 2020$,
+    increment the front pointer.\
+    \
+    This would be $\left\\{\mathcal{O}(n\log{}n), \mathcal{O}(n^{2}\log{}n)\right\\}$ as opposed to my $\left\\{\mathcal{O}(n^2), \mathcal{O}(n^3)\right\\}$ solution.
+
+[^3]: Or, turn the input into a set.
+    as you loop over the input,
+    just check if $2020 - \mathit{x}$
+    is in the set.\
+    \
+    This would be $\left\\{\mathcal{O}(n), \mathcal{O}(n^2)\right\\}$.
 
 ---
 
@@ -288,11 +296,11 @@ You get a file full of lines like this:
 
 You read this as:
 
-1. The word must have `1 <= N <= 3` `a`s in it.
-2. The word must have `1 <= N <= 3` `b`s in it.
-3. The word must have `2 <= N <= 9` `c`s in it.
+1. The word must have $1 \le n \le 3$ `a`s in it.
+2. The word must have $1 \le n \le 3$ `b`s in it.
+3. The word must have $2 \le n \le 9$ `c`s in it.
 
-<div class="aside">
+{{< aside >}}
 
 If upon hearing this,
 your mind immediately went “regex,”
@@ -300,7 +308,7 @@ congratulations, you are smarter than I.
 
 I went the long way round. Strap in.
 
-</div>
+{{< /aside >}}
 
 You get the picture.
 Given this criteria,
@@ -316,18 +324,15 @@ My immediate thought was that each line has the same information,
 just with different values.
 I should make a type representing a line.
 
-<div class="aside">
-
+{{< aside >}}
 A dataclass is the closest thing Python has to structs.
 
 If that means nothing to you, it’s a record.
 
 If that means nothing to you, it’s a `namedtuple` but cooler.
+{{< /aside >}}
 
-</div>
-
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 @dataclasses.dataclass
 class Line:
@@ -356,12 +361,11 @@ dogs and cats living together.
 So I figured I should be fine just filtering out
 any non-alphanumeric characters.
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def parse(infile):
     def parse_line(line):
-        # snip ...
+        # TODO
 
     yield from map(
         parse_line,
@@ -393,28 +397,33 @@ I can slice the first 2 characters to get the bounds,
 the next character to get the “target letter”,
 and anything that remains is the password to check.
 
-<div class="language-tag">Python</div>
-
-```python
-# snip ...
+{{< lang Python >}}
+```python {hl_lines=["3-6",20]}
+def parse(infile):
     def parse_line(line):
-        # unsnip!
         min, max, letter = line[:3]
         password = line[3:]
         min, max = int(min), int(max)
         return Line(range(min, max + 1), letter, password)
-# snip ...
+
+    yield from map(
+        parse_line,
+        map(
+            lambda line: "".join(
+                c for c in line if c.isalnum()
+            ),
+            infile
+        ),
+    )
 
 # parse the file, take only the ones that were valid, and count em
 def part1(infile):
     return len(tuple(filter(Line.is_valid, parse(infile))))
 ```
 
-<div class="aside">
-
+{{< aside >}}
 The `+ 1` is needed because `range` is inclusive-exclusive.
-
-</div>
+{{< /aside >}}
 
 This gave me an answer that *seemed* correct,
 but was woefully incorrect.
@@ -433,7 +442,7 @@ Which leads to
 
 ```python
 min = 7
-max = 1
+max = 1 ???
 letter = "2" ???
 word = "ffoobar" ???
 ```
@@ -444,20 +453,19 @@ Cats and dogs living together. ∎
 
 The sensible thing is to accept that this is a three-step process:
 
-<div class="aside">
+{{< aside >}}
 
 No, the sensible thing is
-<code>(\d+)-(\d+)&nbsp;(\w):&nbsp;(\w*)</code>.
+`(\d+)-(\d+) (\w): (\w*)`.
 But we’re well beyond that point.
 
-</div>
+{{< /aside >}}
 
 1. Split the line on whitespace.
 2. Split the first group on `'-'`
 3. Remove the `':'` from the second group.
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def parse(infile):
     def parse_line(line: str):
@@ -478,16 +486,14 @@ I usually prefer to use lazy iterators for these challenges
 since the data can get huge.
 But a list comprehension is simply better here.
 
-<div class="language-tag">Python</div>
-
+{{< lang Python >}}
 ```python
 def part1(infile, predicate=Line.is_valid):
     return len([line for line in parsed(infile) if predicate(line)])
 ```
 
-<div class="language-tag">Shell</div>
-
-```sh
+{{< lang Shell >}}
+```
 ~src/advent/2020 $ python aoc 2
                 Day 02
 ====================================
@@ -516,26 +522,24 @@ The astute (read: literate) among us will realize that this corresponds to a
 [logical XOR (⊕) operation](https://en.wikipedia.org/wiki/Exclusive_or).
 Python has a `xor` operator built in—they pronounce it like `^`.
 
-This is pretty simple—just add a new method to the `Line` `dataclass`.
+This is pretty simple—just add a new method to the `Line` dataclass.
 However, **the concept of “indices” as presented in the puzzle is 1-based.**
 So we need to do some math on our bounds.
 
-<div class="aside">
+{{< aside >}}
 
 Side notes:
 
 Yes, `^` works on `bool`s as well as `int`s.
 
-I’ll get git diff style line highlighting working soon.
+I’ll get git diff style line highlighting working soon. *EDIT 2020-12-07: done!*
 
 Yes, I really like nested functions.
 
-</div>
+{{< /aside >}}
 
-<div class="language-tag">Python</div>
-
-```python
-# old stuff...
+{{< lang python >}}
+```python {hl_lines=["10-15", "17-20"]}
 @dataclasses.dataclass
 class Line:
     bounds: range
@@ -545,7 +549,6 @@ class Line:
     def is_valid(self) -> bool:
         return self.password.count(self.letter) in self.bounds
 
-    # SHINY NEW STUFF!
     def is_valid_new(self) -> bool:
         def is_letter_at(idx: int) -> bool:
             return self.password[idx] == self.letter
@@ -559,9 +562,9 @@ def part2(infile):
     return part1(infile, predicate=Line.is_valid_new)
 ```
 
-<div class="language-tag">Shell</div>
+{{< lang Shell >}}
 
-```sh
+```
 ~/src/advent/2020 $ python aoc 2
                 Day 02
 ====================================
@@ -593,21 +596,3 @@ My goals for the rest of the event:
 And of course,
 
 * **Get all 50 stars**.
-
----
-
-[^1]: One interesting solution I saw was to sort the input initially.
-    Work from the ends of the list inward.
-    If the sum of those two numbers is > 2020,
-    decrement the end pointer.
-    If the sum is < 2020,
-    increment the front pointer.\
-    \
-    This would be {O(nlogn), O(n<sup>2</sup>logn)} as opposed to my {O(n<sup>2</sup>), O(n<sup>3</sup>)} solution.
-
-[^2]: Or, turn the input into a set.
-    as you loop over the input,
-    just check if `2020 - elem`
-    is in the set.\
-    \
-    This would be {O(n), O(n<sup>2</sup>)}.

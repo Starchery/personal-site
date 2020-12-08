@@ -1,0 +1,28 @@
+.posts-container {
+    flex-direction: column;
+    %elem {
+        flex-basis: 0;
+        flex-grow: 1;
+        margin-bottom: 2rem;
+    }
+    #left {
+        h2 {
+            margin-top: 3rem;
+        }
+        @extend %elem;
+    }
+    #right {
+        @extend %elem;
+        h2 {
+            margin-top: 1rem;
+        }
+    }
+    .post-preview {
+        margin-left: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+body {
+    margin-right: 3rem;
+}

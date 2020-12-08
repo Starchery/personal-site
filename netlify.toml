@@ -1,18 +1,31 @@
 [build]
-# This assumes that the Zola site is in a docs folder. If it isn't, you don't need
-# to have a `base` variable but you do need the `publish` and `command` variables.
-base    = "."
-publish = "./public"
-command = "zola build"
+publish = "public"
+command = "hugo --gc --minify"
 
-[build.environment]
-# Set the version name that you want to use and Netlify will automatically use it.
-ZOLA_VERSION = "0.12.2"
+[context.production.environment]
+HUGO_VERSION = "0.79.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
 
-# The magic for deploying previews of branches.
-# We need to override the base url with whatever url Netlify assigns to our
-# preview site.  We do this using the Netlify environment variable
-# `$DEPLOY_PRIME_URL`.
+[context.split1]
+command = "hugo --gc --minify --enableGitInfo"
+
+[context.split1.environment]
+HUGO_VERSION = "0.79.0"
+HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "zola build --base-url $DEPLOY_PRIME_URL"
+command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.79.0"
+
+[context.branch-deploy]
+command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.79.0"
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = "true"
+

@@ -1,0 +1,22 @@
+.s-icons {
+    a {
+        margin-right: 1em;
+        &:hover {
+            background-color: rgba(46, 112, 255, 0.1);
+            border-radius: 50%;
+            color: #005cc5;
+        }
+
+        svg {
+            height: 1.2em;
+            width: 1.2em;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .s-icons a:hover {
+        background-color: rgba(67, 164, 255, 0.1);
+        color: #79B8FF;
+    }
+}

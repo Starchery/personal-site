@@ -1,0 +1,26 @@
+{{ define "title" }}
+    {{ $word := "post" }}
+    {{ $count := len .Pages }}
+    {{ if ne $count 1 }}
+        {{ $word = printf $word "s" }}
+    {{ end }}
+    <h1>{{ $count }} {{ $word }} tagged <q>{{ .Title }}</q></h1>
+
+{{ end }}
+
+{{ define "content" }}
+
+    {{ range .Pages }}
+          <article class="post-preview">
+            <h3 class="post-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            {{ partial "util/date-and-tags.html" . }}
+            <div class="summary">
+              {{ .Summary }}
+            </div>
+          </article>
+        {{ end }}
+
+{{ end }}
+

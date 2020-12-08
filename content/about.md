@@ -1,8 +1,6 @@
-+++
-template = "page.html"
-+++
-
-# about
+---
+title: about
+---
 
 My name is Randy Henry.
 My projects are visible on my
@@ -26,7 +24,15 @@ jazz{,-fusion},
 reggae,
 and chess&mdash;though I’m pretty bad at it.
 
+## how to use this site
+
+Links are set in [small caps.](/)
+Unlike [practical typography,](https://0x0.st/Njj5)
+both cross-references and external links are set this way.
+
+The faux nav bar is an exception: everything in the nav bar is a link.
+
 ## contact me
 
 * [randolph.henry.work@gmail.com](mailto:randolph.henry.work@gmail.com)
-* [github.com/Starchery](github.com/Starchery)
+* [github.com/Starchery](https://github.com/Starchery)
