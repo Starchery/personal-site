@@ -321,7 +321,21 @@ hr {
 
 @media (max-width: 450px) {
   header {
-    display: block;
+    #hright {
+      .tag-text {
+        display: none;
+      }
+      svg {
+        height: 1.5em;
+        width:  1.5em;
+        padding: 0 .5em;
+      }
+    }
+    #hleft {
+      .site-title .headlink {
+        font-size: 1.5em;
+      }
+    }
   }
 
 }
@@ -329,6 +343,12 @@ hr {
 @media (max-width: 240px) {
   nav {
     display: grid;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    display: block;
   }
 }
 
@@ -341,5 +361,11 @@ hr {
 @media (max-width: 1090px) {
   body pre {
     margin-right: -5vw;
+  }
+}
+
+@media (max-width: 640px) {
+  body pre {
+    margin-right: inherit;
   }
 }

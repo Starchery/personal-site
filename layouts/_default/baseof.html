@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-  {{ partial "head.html" . }}
-  {{ partial "util/top.html" . }}
-  <body>
-    {{ block "header" . }}
-        {{ partial "nav.html" . }}
+    <html lang="en">
+    {{ partial "head.html" . }}
+    {{ partial "util/top.html" . }}
+    <body>
+        {{ block "header" . }}
+            {{ partial "nav.html" . }}
+        {{ end }}
+        <main>
+            {{ block "title" . }}
+                <h1>{{ .Title }}</h1>
+            {{ end }}
+            {{ block "content" . }} {{ end }}
+        </main>
+    </body>
+    {{ if .Params.hasMath}}
+        {{ partial "util/mathjax.html" . }}
     {{ end }}
-    <main>
-      {{ block "title" . }}
-        <h1>{{ .Title }}</h1>
-      {{ end }}
-      {{ block "content" . }} {{ end }}
-    </main>
-  </body>
-  {{ if .Params.hasMath}}{{ partial "util/katex.html" . }}{{ end }}
 </html>

@@ -15,13 +15,5 @@
             {{ end }}
         </div>
     </div>
-    {{ $related := .Site.RegularPages.Related . | first 5 }}
-    {{ with $related }}
-        <ul>
-            {{ range . }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-    {{ end }}
 </div>
 

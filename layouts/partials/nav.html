@@ -1,16 +1,18 @@
 <header>
-  <div id="hleft">
-    <div class="site-title">
-      <a href="/" class="headlink">{{ .Site.Title }}</a>
+    <div id="hleft">
+        <div class="site-title">
+            <a href="/" class="headlink">{{ .Site.Title }}</a>
+        </div>
     </div>
-  </div>
-  <div id="hright">
-      <nav id="nav">
-        {{ range .Site.Menus.main }}
-          {{ $icon := printf "static/svg/%s.svg" .Pre | readFile | safeHTML }}
-          {{ $text := print $icon " " .Name | safeHTML }}
-          <a class="headlink" href="{{ .URL }}">{{ $text }}</a>
-        {{ end }}
-      </nav>
-  </div>
+
+    <div id="hright">
+        <nav id="nav">
+            {{ range .Site.Menus.main }}
+                {{ $icon := printf "static/svg/%s.svg" .Pre | readFile | safeHTML }}
+                <a class="headlink" href="{{ .URL }}" title="{{ .Name }}">
+                    {{ $icon }} <span class="tag-text">{{ .Name }}</span>
+                </a>
+            {{ end }}
+        </nav>
+    </div>
 </header>

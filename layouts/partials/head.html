@@ -1,21 +1,28 @@
-  <head>
+{{ $title := print .Title " | " .Site.Title }}
+    {{ if .IsHome }}
+    {{ $title = .Site.Title }}
+{{ end }}
+
+{{ $favicon := "/favicon.ico?v=kPP08pKEXB" }}
+<head>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    {{ $title := print .Title " | " .Site.Title }}
-    {{ if .IsHome }}
-      {{ $title = .Site.Title }}
-    {{ end }}
+    <meta property="og:image" content="{{ $favicon }}" />
+    <link rel="shortcut icon" href="{{ $favicon }}">
+    {{ range .AlternativeOutputFormats -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <meta name="twitter:title" content="{{ $title }}">
     <title>{{ $title }}</title>
 
     {{ block "styles" . }}
-      {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-      <link rel="stylesheet" href="{{ $style.Permalink }}">
+        {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
     {{ end }}
-  </head>
+</head>

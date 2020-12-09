@@ -22,11 +22,11 @@ indie {folk,rock,pop},
 {neo-,}soul,
 jazz{,-fusion},
 reggae,
-and chess&mdash;though I’m pretty bad at it.
+and chess—though I’m pretty bad at it.
 
 ## how to use this site
 
-Links are set in [small caps.](/)
+Links are set in [small caps.](/about)
 Unlike [practical typography,](https://0x0.st/Njj5)
 both cross-references and external links are set this way.
 

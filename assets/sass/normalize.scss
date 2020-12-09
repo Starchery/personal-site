@@ -29,61 +29,6 @@ body, a {
 @media all and (min-width:1000px) { html { font-size: 24px; } }
 @media all and (max-width:740px) { html{ font-size: 18px; } }
 
-@media (max-width: 640px) {
-  body {
-    margin: 1.5rem;
-    padding: 0;
-  }
-  header {
-    display: flex;
-    margin-bottom: 2rem;
-
-    #hright {
-      margin-left: auto;
-      align-items: center;
-      align-content: center;
-    }
-  }
-  nav {
-    display: flex;
-    // align-items: center;
-    // justify-content: flex-end;
-    // margin-left: auto;
-    > a:not(:last-child) {
-      margin-right: 0.5rem;
-    }
-  }
-
-  blockquote {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    width: auto;
-  }
-
-  li {
-    margin-left: auto;
-    // padding-left: 0.5rem;
-  }
-
-  %sidebar {
-    float: inherit;
-    position: inherit;
-    text-align: left;
-    width: 100%;
-  }
-
-  // .aside {
-  //   // background-color: #E2E8F0;
-  //   padding: 0.3rem 0.5rem;
-  //   margin-left: 1rem;
-  //   margin-right: 1rem;
-  //   width: auto;
-  //   border: 1px solid #e2e8f0;
-  //   border-left: 6px solid #e2e8f0;
-  //   margin-bottom: 1em;
-  // }
-}
-
 @media (max-width: 420px) {
   header {
     display: block;
