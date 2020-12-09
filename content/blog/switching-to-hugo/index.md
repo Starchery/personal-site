@@ -2,6 +2,7 @@
 title: "Switching to Hugo"
 date: 2020-12-09T16:00:09-05:00
 draft: false
+summary: I recently switched this site over from using Zola to Hugo for static site generation.
 tags:
     - programming
 ---
@@ -12,9 +13,15 @@ went through the arduous task of
 setting this site up to use
 [hugo](https://gohugo.io)
 for static site generation.
-<!--more-->
 You probably didn't notice much
 different—the frontend is pretty much the same.
+
+{{< aside >}}
+Except for the sick new dark theme!
+It uses your `prefers-color-scheme` setting,
+if you want to try it out.
+I'll add a toggle button, maybe.
+{{< /aside >}}
 
 I was using
 [zola](https://getzola.org)

@@ -23,7 +23,10 @@
                             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </h3>
                         {{ partial "util/date-and-tags.html" . }}
-                        <div class="summary"> {{ .Summary }} </div>
+                        <div class="summary">
+                            {{ .Summary }}
+                            <a href="{{ .RelPermalink }}">read more</a>
+                        </div>
                     </article>
                 {{ end }}
             {{ end }}
